@@ -6,9 +6,12 @@
 #include <stdio.h>
 
 /**
- * struct specifier_s - struct to be printed
- * @spec: type to print
- * @f: func to print
+ * struct specifier_s - struct representing printing functions for specifiers
+ * @spec: format specifier
+ * @f: func to print a format espec
+ *
+ * This struct holds a char, representing the format spec and a ptr to the func
+ * that handles the printing of that spec
 */
 typedef struct specifier_s
 {
@@ -16,7 +19,6 @@ typedef struct specifier_s
     int (*f)(va_list);
 } specifier_t;
 
-int _putchar(char c);
 int print_char(va_list args);
 int print_string(va_list args);
 int print_percent(va_list args);

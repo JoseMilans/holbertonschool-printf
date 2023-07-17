@@ -5,7 +5,7 @@ C printf Project by the Joses (Gil_Milans)
 main.h
 
 The header file for our programme. It includes the necessary library inclusions as well as the function prototypes for our _printf function and other auxiliary functions (print_handlers.c). 
-The typedef statement defines a new data type, specifier_t, which is a structure that holds a character pointer and a function pointer. This structure is used to create an array of structures in the _printf function implementation.
+The typedef statement defines a new data type, specifier_t, which is a structure that holds a character that represents the format specifier, such as c, s, etc. and a function pointer that takes a va_list and returns an int. This structure is used to create an array of structures in the _printf function implementation.
 
 print_handlers.c
 
