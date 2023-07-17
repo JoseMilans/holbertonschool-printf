@@ -21,7 +21,7 @@ int handle_format(const char *format, va_list args)
 			i++;
 			if (format[i] == '%')
 			{
-				_putchar('%');
+				write(1, &format[i], 1);
 				printed_chars++;
 				continue;
 			}
@@ -39,7 +39,7 @@ int handle_format(const char *format, va_list args)
 		}
 		else
 		{
-			_putchar(format[i]);
+			write(1, &format[i], 1);
 			printed_chars++;
 		}
 	}
