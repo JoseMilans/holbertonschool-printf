@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * print_char - prints a char
- * @args: arg to print
+ * @args: arg tist to extract char from
  * Return: num of chars printed
  */
 int print_char(va_list args)
@@ -14,7 +14,7 @@ int print_char(va_list args)
 }
 /**
  * print_string - prints a str
- * @args: arg to print
+ * @args: arg list to extract str from
  * Return: num of chars printed
  */
 int print_string(va_list args)
@@ -34,15 +34,12 @@ int print_string(va_list args)
 	return (i);
 }
 /**
- * print_percent - prints a percent sym
- * @args: arg to print
- * Return: num of chars printed
+ * print_int - print a number
+ * @args: va_list with number to print
+ * Return: number of characters printed
  */
-int print_percent(va_list args)
+int print_int(va_list args)
 {
-	(void)args;
-	char c = '%';
-
-	write(1, &c, 1);
-	return (1);
+    int number = va_arg(args, int);
+    return (print_integer(number));
 }
