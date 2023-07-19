@@ -1,0 +1,79 @@
+.\" Manpage for customised _printf
+.\" Contact 6764@holbertonstudents.com or 6767@holbertonstudents.com to correct errors or typos.
+.TH man 3 "19 Jul 2023" "1.0" "_printf man page"
+.SH NAME
+_printf \- A custom text formatter and printer.
+
+.SH SYNOPSIS
+.B #include "main.h"
+
+.B int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+The _printf function provides an interface to print formatted text to the console. It uses a format string that may contain conversion specifiers, which are replaced by arguments specified in the function call.
+
+.SS CONVERSION SPECIFIERS:
+The following conversion specifiers are supported:
+
+.BR c
+The 'c' specifier expects an int argument, which is converted to an unsigned char, and the corresponding character is written.
+
+.BR s
+The 's' specifier expects a char* argument. The string is written until a null character is encountered.
+
+.BR %
+The '%%' specifier writes a '%' character. No argument is required.
+
+.BR d
+The 'd' specifier expects an int argument, which is written as a decimal number.
+
+.BR i
+The 'i' specifier also expects an int argument, which is written as a decimal number.
+
+.SH EXAMPLES
+.SS TEXT
+_printf("Hello, world!");
+
+$Hello, world!
+
+.SS DECIMAL
+_printf("Result: %d", 8);
+
+$Result: 8
+
+.SS CHARACTER
+_printf("Character: %c", 'C');
+
+$Character: C
+
+.SS STRING
+_printf("Name: %s", "Jose");
+
+$Name: Jose
+
+.SS PERCENT SYMBOL
+_printf("We'r giving 100%%!");
+
+$We'r giving 100%!
+
+.SH RETURN VALUE
+The _printf function returns the number of characters printed, excluding the null byte. 
+
+.SS EXAMPLE
+int count;
+
+count = _printf("Hello!");
+
+_printf("%d", count);
+
+$6
+
+.SH SEE ALSO
+The standard 'printf' function - consult 'man printf' for more information.
+
+.SH BUGS
+In case of missing arguments for specified conversion specifiers, _printf may print unexpected characters.
+
+.SH AUTHORS
+Jose Milans (6764@holbertonstudents.com)
+Jose Gil (6767@holbertonstudents.com)
