@@ -1,18 +1,85 @@
-# holbertonschool-printf
+# A Customised Printf (_printf)
+## Our Firs Porject in C Programming Language
+***
+## Table of contents
+1. [About Our Porject](#about-our-project)
+2. [Showcase](#showcase)
+3. [Helpful Resources](#helpful-resources)
+4. [Project Guidelines](#project-guidelines)
+5. [Developers](#developers)
+***
+## About Our Project
+***
+##### Ever wondered what happens when you use printf() in your C program? We did too! So, we made our own mini-version of it, which we named _printf(). This function takes a format string and prints it to the console, similar to printf() but simpler and beginner-friendly!
+![Pic](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxtBoAQG-ycgK4yi6LJ9DH-VkRj6lsFT8rGA&usqp=CAUi)
 
-C printf Project by the Joses (Gil_Milans)
+## Showcase
+***
+Here's a quick demonstration of _printf() in action:
 
-main.h
+```
+ _printf("Hello, there!");
+```
 
-The header file for our programme. It includes the necessary library inclusions as well as the function prototypes for our _printf function and other auxiliary functions (print_handlers.c). 
-The typedef statement defines a new data type, specifier_t, which is a structure that holds a character that represents the format specifier, such as c, s, etc. and a function pointer that takes a va_list and returns an int. This structure is used to create an array of structures in the _printf function implementation.
+* $ Hello, there!
 
-print_handlers.c
+```
+_printf("Sum of 1 and 1 is %d", 1+1);
+```
 
-This file contains the implementations of functions that handle the printing of different data types. Each function takes a variadic argument list (va_list) and returns an integer. The specifier_s struct is used to hold a format specifier (a string) and a function pointer (to a function that takes a va_list and returns an int). This structure allows us to associate each format specifier (like "c", "s", or "%") with the appropriate function to handle that type of argument.
-In the _printf function, we create an array of these structs to handle the different format specifiers. We can easily extend this array to add more format specifiers in the future, which is one of the advantages of this design.
+* $ Sum of 1 and 1 is 2
 
-_printf.c
+```
+_printf("My name is %s, I'm %d years old and I've given it my 100%%.", "Jose", 35);
+```
 
-This file contains the implementation of the _printf function, which takes a format string and a variable number of arguments. A variadic function _printf is defined, which can take any number of arguments. Inside the function, we loop over the characters of the format string. If the character is not a %, it's printed directly to the standard output. If it is a %, we call the handle_format function.
-In handle_format function, we have an array of structures, where each structure has a format specifier and a corresponding function pointer. We loop through this array and check if the next character in the format string matches any of the format specifiers. If it does, we call the corresponding function.
+* $ My name is Jose, I'm 35 years old and I've given it my 100%.
+
+## Helpful Resources
+***
+Need help? Check out our manual page for _printf!
+```
+$ man ./man_3_printf
+```
+
+## Project Guidelines
+***
+### Tasks
+
+#### 0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life
+Write a function that produces output according to a format.
+* Prototype: int /_printf(const char *format, ...);
+* Returns: the number of characters printed (excluding the null byte used to end output to strings)
+* write output to stdout, the standard output stream
+* format is a character string. The format string is composed of zero or more directives. See man 3 printf for more detail. You need to handle the following conversion specifiers:
+* * c
+* * s
+* * %
+* You don’t have to reproduce the buffer handling of the C library printf function
+* You don’t have to handle the flag characters
+* You don’t have to handle field width
+* You don’t have to handle precision
+* You don’t have to handle the length modifiers
+##### REPO: GitHub repository: printf
+**
+#### 1. Education is when you read the fine print. Experience is what you get if you don't
+Handle the following conversion specifiers:
+* d
+* i
+* You don’t have to handle the flag characters
+* You don’t have to handle field width
+* You don’t have to handle precision
+* You don’t have to handle the length modifiers
+##### Repo: 
+* GitHub repository: holbertonschool-printf
+**
+#### 2. Just because it's in print doesn't mean it's the gospel
+Create a man page for your function.
+##### Repo: 
+* GitHub repository: holbertonschool-printf
+* File: man_3_printf
+**
+## Developers
+***
+* Jose Milans
+* Jose Gil
