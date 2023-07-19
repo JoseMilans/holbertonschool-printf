@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	int (*handler_fn)(va_list);
 	unsigned int i = 0, count = 0;
+	char perc = '%';
 
 	if (format == NULL) /* Check if format is NULL */
 		return (-1);
@@ -24,14 +25,19 @@ int _printf(const char *format, ...)
 		else
 		{
 			handler_fn = get_print_func(&format[i + 1]);
-			if (handler_fn != NULL)
+			if (format[i + 1] == '%') /* %% case debuged.2-t */
 			{
-				i += 2, count += handler_fn(args);
-			}
-			else if (format[i + 1] != '\0')
+				write(1, &perc, 1);
+				count++, i += 2;
+			} /* Invalid arg edge case debuged.6-t */
+			else if (handler_fn == NULL && format[i + 1] != '\0')
 			{
 				write(1, &format[i], 1);
 				i++, count++;
+			}
+			else if (handler_fn != NULL)
+			{
+				i += 2, count += handler_fn(args);
 			}
 			else
 			{
