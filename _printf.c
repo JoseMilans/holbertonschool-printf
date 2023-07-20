@@ -64,6 +64,7 @@ int (*get_print_func(const char *format))(va_list)
 		{"s", print_string},
 		{"d", print_int},
 		{"i", print_int},
+		{"b", print_bin},
 		{NULL, NULL}
 	};
 	for (i = 0; print_types[i].p != NULL; i++)
