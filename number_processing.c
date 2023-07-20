@@ -1,27 +1,27 @@
 #include "main.h"
 /**
  * abs_val - the absolute value
- * @num: input
+ * @input_num: the integer to print
  * Return: value
 */
-int abs_val(int num)
+int abs_val(int input_num)
 {
-	if (num < 0)
-		return (-1 * num);
+	if (input_num < 0)
+		return (-1 * input_num);
 	else
-		return (num);
+		return (input_num);
 }
 /**
  * digit_count - counter of digits
- * @num: input
+ * @input_num: integer to print
  * Return: digit count
 */
-int digit_count(int num)
+int digit_count(int input_num)
 {
 	int count = 0;
-	int num_temp = num;
+	int num_temp = input_num;
 
-	if (num <= 0)
+	if (input_num <= 0)
 		count += 1;
 	while (abs_val(num_temp) != 0)
 	{
@@ -32,27 +32,34 @@ int digit_count(int num)
 }
 /**
  * print_integer - prints an integer
- * @num: input
- * Return: digit count
+ * @input_num: int to print
+ * Return: digit count of the number
 */
-int print_integer(int num)
+int print_integer(int input_num)
 {
-	unsigned int unint;
+	unsigned int abs_num;
 	int count;
-	char neg = '-';
-	char num_char;
+	char neg_sign = '-';
+	char digit_char;
 
-	count = digit_count(num);
-	if (num < 0)
+	count = digit_count(input_num); /* Get digit count and store it */
+	/* Convert neg numbers to positive and print a neg sign if necessary*/
+	if (input_num < 0)
 	{
-		write(1, &neg, 1);
-		unint = -num;
+		abs_num = -input_num;
+		write(1, &neg_sign, 1);
 	}
 	else
-		unint = num;
-	if (unint >= 10)
-		print_integer(unint / 10);
-	num_char = (unint % 10 + '0');
-	write(1, &num_char, 1);
+	{
+		abs_num = input_num;
+	}
+	/* Recursively call the func for numbers greater than 10 */
+	if (abs_num >= 10)
+	{
+		print_integer(abs_num / 10);
+	}
+	digit_char = (abs_num % 10 + '0');
+	write(1, &digit_char, 1);
+
 	return (count);
 }
