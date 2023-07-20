@@ -40,6 +40,7 @@ int print_string(va_list args)
  */
 int print_int(va_list args)
 {
-    int number = va_arg(args, int);
-    return (print_integer(number));
+	int number = va_arg(args, int);
+
+	return (print_integer(number));
 }
