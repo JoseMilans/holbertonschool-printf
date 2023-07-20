@@ -9,12 +9,10 @@
 5. [Developers](#developers)
 ***
 ## About Our Project
-***
 ##### Ever wondered what happens when you use printf() in your C program? We did too! So, we made our own mini-version of it, which we named _printf(). This function takes a format string and prints it to the console, similar to printf() but simpler and beginner-friendly!
 ![Pic](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxtBoAQG-ycgK4yi6LJ9DH-VkRj6lsFT8rGA&usqp=CAUi)
-
-## Showcase
 ***
+## Showcase
 Here's a quick demonstration of _printf() in action:
 
 ```
@@ -34,16 +32,15 @@ _printf("My name is %s, I'm %d years old and I've given it my 100%%.", "Jose", 3
 ```
 
 * $ My name is Jose, I'm 35 years old and I've given it my 100%.
-
-## Helpful Resources
 ***
+## Helpful Resources
 Need help? Check out our manual page for _printf!
 ```
 $ man ./man_3_printf
 ```
-
-## Project Guidelines
 ***
+## Project Guidelines
+
 ### Tasks
 
 #### 0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life
@@ -60,8 +57,9 @@ Write a function that produces output according to a format.
 * You don’t have to handle field width
 * You don’t have to handle precision
 * You don’t have to handle the length modifiers
-##### REPO: GitHub repository: printf
-**
+##### Repo: 
+* GitHub repository: printf
+
 #### 1. Education is when you read the fine print. Experience is what you get if you don't
 Handle the following conversion specifiers:
 * d
@@ -72,14 +70,13 @@ Handle the following conversion specifiers:
 * You don’t have to handle the length modifiers
 ##### Repo: 
 * GitHub repository: holbertonschool-printf
-**
+
 #### 2. Just because it's in print doesn't mean it's the gospel
 Create a man page for your function.
 ##### Repo: 
 * GitHub repository: holbertonschool-printf
 * File: man_3_printf
-**
-## Developers
 ***
+## Developers
 * Jose Milans
 * Jose Gil
