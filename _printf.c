@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 			{
 				i += 2, count += handler_fn(args);
 			}
-			else
+			else /* Edge case: format str ends with single % */
 			{
 				return (-1);
 			}
