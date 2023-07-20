@@ -18,9 +18,10 @@ typedef struct print
     int (*f)(va_list);
 } print_t;
 
-int print_integer(int num);
-int digit_count(int num);
-int abs_val(int num);
+int print_bin(va_list list);
+int print_integer(int input_num);
+int digit_count(int input_num);
+int abs_val(int input_num);
 int print_int(va_list args);
 int print_char(va_list args);
 int print_string(va_list args);
