@@ -34,7 +34,7 @@ _printf("My name is %s, I'm %d years old and I've given it my 100%%.", "Jose", 3
 * $ My name is Jose, I'm 35 years old and I've given it my 100%.
 ***
 ## Flowchart
-```mermaid
+```
 graph LR
 A[Start] -->B(String input)
     B --> C{Has convertion specifiers? ('%?')}
