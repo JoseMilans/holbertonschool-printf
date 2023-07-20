@@ -35,7 +35,6 @@ _printf("My name is %s, I'm %d years old and I've given it my 100%%.", "Jose", 3
 ***
 ## Flowchart
 ```
-graph LR
 A[Start] -->B(String input)
     B --> C{Has convertion specifiers? ('%?')}
     C -->|Cero| D[Prints raw string]
