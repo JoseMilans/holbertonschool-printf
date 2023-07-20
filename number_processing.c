@@ -63,3 +63,35 @@ int print_integer(int input_num)
 
 	return (count);
 }
+/**
+ * print_bin - prints an unsigned int in binary
+ * @list: list of args
+ * Return: num of chars printed
+ */
+int print_bin(va_list list)
+{
+	unsigned int num = va_arg(list, unsigned int);
+	int bin_digits[32];
+	int digit_count = 0;
+	int i;
+
+	if (num == 0)
+	{
+		char zero = '0';
+
+		write(1, &zero, 1);
+		return (1);
+	}
+	while (num > 0)
+	{
+		bin_digits[digit_count++] = num % 2;
+		num /= 2;
+	}
+	for (i = digit_count - 1; i >= 0; i--)
+	{
+		char digit_char = bin_digits[i] + '0';
+
+		write(1, &digit_char, 1);
+	}
+	return (digit_count);
+}
