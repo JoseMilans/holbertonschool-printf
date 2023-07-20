@@ -8,11 +8,11 @@
  */
 int main(void)
 {
-	int i = 0, j = 0;
+	int i, j;
 
-	i = _printf("Hello world\n");
-	j = printf("Hello world\n");
-	printf("cus: %d , std: %d\n", i, j);
+	i = _printf("Hey ho, let's go!\n");
+	j = printf("Hey ho, let's go!\n");
+	printf("cus: %d; std: %d\n", i, j);
 
 	return (0);
 }

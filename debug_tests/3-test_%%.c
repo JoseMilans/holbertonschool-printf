@@ -7,10 +7,10 @@
  */
 int main(void)
 {
-	int i = 0, j = 0;
+	int i, j;
 
 	i = _printf("Percent symbol: %%\n");
 	j = printf("Percent symbol: %%\n");
-	printf("cus: %d ; std: %d\n", i, j);
+	printf("cus: %d; std: %d\n", i, j);
 	return (0);
 }

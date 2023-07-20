@@ -6,10 +6,10 @@
  */
 int main(void)
 {
-	int i = 0, j = 0;
+	int i, j;
 
-	i = _printf("More than 1 spec: %c%s%%\n", 'c', " YES!");
-	j = printf("More than 1 spec: %c%s%%\n", 'c', " YES!");
-	printf("cus: %d ; std: %d\n", i, j);
+	i = _printf("Many format specifiers: %c%s%%\n", 'c', " YEAH!");
+	j = printf("Many format specifiers: %c%s%%\n", 'c', " YEAH!");
+	printf("cus: %d; std: %d\n", i, j);
 	return (0);
 }
