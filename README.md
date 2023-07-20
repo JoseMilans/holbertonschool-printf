@@ -35,12 +35,11 @@ _printf("My name is %s, I'm %d years old and I've given it my 100%%.", "Jose", 3
 ***
 ## Flowchart
 ```mermaid
-Flowchart TD
-A[Start] -->B(String input);
-    B --> C{Has convertion specifiers? ('%?')};
-    C -- Cero --> D[Prints raw string];
-    C -- One/One arg --> E[Print str replaceing the specifier for the passed arg];
-    C -- More than one --> F[Same but replaceing each specifier form left to right];
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
 ```
 ## Helpful Resources
 Need help? Check out our manual page for _printf!
