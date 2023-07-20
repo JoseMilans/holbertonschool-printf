@@ -36,10 +36,10 @@ _printf("My name is %s, I'm %d years old and I've given it my 100%%.", "Jose", 3
 ## Flowchart
 ```mermaid
 graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+    Start(input str)-->None Conversion specifier
+    Start(input str)-->One or more specifier;
+    None Conversion specifier-->D;
+    One or more specifier-->D;
 ```
 ## Helpful Resources
 Need help? Check out our manual page for _printf!
