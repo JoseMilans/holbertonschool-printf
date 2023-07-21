@@ -1,30 +1,31 @@
 #include "main.h"
 /**
- * _printf - custom printf fn
- * @format: format str
- * @...: variable arguments passed to the function
- * Return: num of chars printed
+ * _printf - Custom printf function
+ * @format: Format string
+ * @...: Variable arguments passed to the function
+ * Return: Number of characters printed
  */
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int (*handler_fn)(va_list);
 	unsigned int i = 0, count = 0;
 	char perc = '%';
 
-	if (format == NULL) /* Check if format is NULL */
-		return (-1);
 	va_start(args, format); /* Initialise va_list */
+	if (!format) /* Check if format is NULL */
+		return (-1);
 	while (format && format[i])
 	{
-		if (format[i] != '%')
+		if (format[i] != '%') /* Check for '%' character */
 		{
-			write(1, &format[i], 1);
+			write(1, &format[i], 1); /* If not '%', write char as it is */
 			i++, count++;
 		}
-		else
+		else /* If '%' is encountered, check for format specifier */
 		{
-			handler_fn = get_print_func(&format[i + 1]);
+			int (*handler_fn)(va_list) = get_print_fn(&format[i + 1]);
+			/* Get fn ptr for format spec */
+
 			if (format[i + 1] == '%') /* %% case debuged.2-t */
 			{
 				write(1, &perc, 1);
@@ -32,16 +33,15 @@ int _printf(const char *format, ...)
 			} /* Invalid arg edge case debuged.6-t */
 			else if (handler_fn == NULL && format[i + 1] != '\0')
 			{
-				write(1, &format[i], 1);
+				write(1, &perc, 1);
 				i++, count++;
-			}
-			else if (handler_fn != NULL)
+			} /* Edge case: format str ends with single % */
+			else /* If no hdlr fn's found n' nxt char is null, indicate error*/
 			{
-				i += 2, count += handler_fn(args);
-			}
-			else /* Edge case: format str ends with single % */
-			{
-				return (-1);
+				if (handler_fn == NULL)
+					return (-1);
+				count += handler_fn(args);
+				i += 2;
 			}
 		}
 	}
@@ -49,13 +49,11 @@ int _printf(const char *format, ...)
 	return (count);
 }
 /**
- * get_print_func - function to get the fn ptr corresponding to a
- * format spec
- * @format: Ptr to the start of a format specifier
- *
- * Return: function pointer to the corresponding handler function
+ * get_print_fn - Function to get the fn ptr corresponding to a format spec
+ * @s: Pointer to the start of a format specifier
+ * Return: Function pointer to the corresponding handler function
  */
-int (*get_print_func(const char *format))(va_list)
+int (*get_print_fn(const char *s))(va_list)
 {
 	unsigned int i;
 
@@ -67,10 +65,11 @@ int (*get_print_func(const char *format))(va_list)
 		{"b", print_bin},
 		{NULL, NULL}
 	};
-	for (i = 0; print_types[i].p != NULL; i++)
-	{
-		if (*(print_types[i].p) == *format)
-			break;
+	for (i = 0; print_types[i].p != NULL; i++) /* Thr ary of strcts till end */
+	{ /* Check if format specifier matches with struct member */
+		if (*(print_types[i].p) == *s)
+			return (print_types[i].f);
 	}
-	return (print_types[i].f);
+	/* Return the function pointer corresponding to the format specifier */
+	return (NULL);
 }
