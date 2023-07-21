@@ -34,7 +34,7 @@ _printf("My name is %s, I'm %d years old and I've given it my 100%%.", "Jose", 3
 * $ My name is Jose, I'm 35 years old and I've given it my 100%.
 ***
 ## Flowchart
-![Alt text](https://github.com/JOTALGS/holbertonschool-low_level_programming/blob/master/argc_argv/diagdrawio.png)https://github.com/JOTALGS/holbertonschool-low_level_programming/blob/master/argc_argv/diagdrawio.png)
+![Alt text](https://github.com/JoseMilans/holbertonschool-printf/blob/main/diagdrawio.png)
 ## Helpful Resources
 Need help? Check out our manual page for _printf!
 ```
