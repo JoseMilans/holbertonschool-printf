@@ -34,13 +34,7 @@ _printf("My name is %s, I'm %d years old and I've given it my 100%%.", "Jose", 3
 * $ My name is Jose, I'm 35 years old and I've given it my 100%.
 ***
 ## Flowchart
-```mermaid
-graph TD;
-    A[Start(input str)]-->B[None Conversion specifier];
-    A[Start(input str)]-->C[One or more specifier];
-    B[None Conversion specifier]-->D;
-    C[One or more specifier]-->D;
-```
+![Alt text](https://github.com/JOTALGS/holbertonschool-low_level_programming/blob/master/argc_argv/diagdrawio.png)https://github.com/JOTALGS/holbertonschool-low_level_programming/blob/master/argc_argv/diagdrawio.png)
 ## Helpful Resources
 Need help? Check out our manual page for _printf!
 ```
