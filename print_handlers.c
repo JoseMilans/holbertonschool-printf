@@ -8,7 +8,7 @@ int print_char(va_list args)
 {
 	char c;
 
-	c = va_arg(args, int);
+	c = va_arg(args, int); /* Always read an arg */
 	write(1, &c, 1);
 	return (1);
 }
@@ -22,16 +22,16 @@ int print_string(va_list args)
 	int i;
 	char *str;
 
-	str = va_arg(args, char *);
-	if (!str)
+	str = va_arg(args, char *); /* Get the string from the arg list */
+	if (!str) /* If the string is NULL, print "(null)" */
 	{
 		str = "(null)";
 	}
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++) /* Loop through the strg till null char */
 	{
-		write(1, &str[i], 1);
+		write(1, &str[i], 1); /* Write each char to stdout */
 	}
-	return (i);
+	return (i); /* Return the length of string printed */
 }
 /**
  * print_int - print a number
@@ -40,7 +40,7 @@ int print_string(va_list args)
  */
 int print_int(va_list args)
 {
-	int number = va_arg(args, int);
+	int number = va_arg(args, int); /* Get the integer from the arg list */
 
-	return (print_integer(number));
+	return (print_integer(number)); /* Call print_integer func to print it */
 }
