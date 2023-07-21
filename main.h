@@ -25,7 +25,7 @@ int abs_val(int input_num);
 int print_int(va_list args);
 int print_char(va_list args);
 int print_string(va_list args);
-int (*get_print_func(const char *format))(va_list);
+int (*get_print_fn(const char *s))(va_list);
 int _printf(const char *format, ...);
 
 #endif
