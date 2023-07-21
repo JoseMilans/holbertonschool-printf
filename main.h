@@ -14,8 +14,8 @@
 */
 typedef struct print
 {
-    char *p;
-    int (*f)(va_list);
+	char *p;
+	int (*f)(va_list);
 } print_t;
 
 int print_bin(va_list list);
