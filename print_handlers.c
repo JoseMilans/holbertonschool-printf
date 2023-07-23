@@ -34,13 +34,13 @@ int print_string(va_list args)
 	return (i); /* Return the length of string printed */
 }
 /**
- * print_int - print a number
+ * print_signed_int - print a number
  * @args: va_list with number to print
  * Return: number of characters printed
  */
-int print_int(va_list args)
+int print_signed_int(va_list args)
 {
 	int number = va_arg(args, int); /* Get the integer from the arg list */
 
-	return (print_integer(number)); /* Call print_integer func to print it */
+	return (print_signed_integer(number)); /* Call p_s_int func to print it */
 }
