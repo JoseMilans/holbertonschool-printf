@@ -13,17 +13,15 @@ int abs_val(int input_num)
 }
 /**
  * digit_count - counter of digits
- * @input_num: integer to print
+ * @input_num: unsigned integer to print
  * Return: digit count
 */
-int digit_count(int input_num)
+int digit_count(unsigned int input_num)
 {
 	int count = 0;
-	int num_temp = input_num;
+	unsigned int num_temp = input_num;
 
-	if (input_num <= 0)
-		count += 1;
-	while (abs_val(num_temp) != 0)
+	while (num_temp != 0)
 	{
 		num_temp = num_temp / 10;
 		count++;
@@ -31,11 +29,32 @@ int digit_count(int input_num)
 	return (count);
 }
 /**
- * print_integer - prints an integer
+ * print_integer - prints an unsigned integer
+ * @input_num: unsigned int to print
+ * Return: digit count of the number
+*/
+int print_integer(unsigned int input_num)
+{
+	int count;
+	char digit_char;
+
+	count = digit_count(input_num); /* Get digit count and store it */
+	/* Recursively call the func for numbers greater than 10 */
+	if (input_num >= 10)
+	{
+		print_integer(input_num / 10);
+	}
+	/* Get the last digit of the number and convert it to char */
+	digit_char = (input_num % 10) + '0';
+	write(1, &digit_char, 1);
+	return (count);
+}
+/**
+ * print_signed_integer - prints an integer
  * @input_num: int to print
  * Return: digit count of the number
 */
-int print_integer(int input_num)
+int print_signed_integer(int input_num)
 {
 	unsigned int abs_num;
 	int count;
@@ -53,16 +72,15 @@ int print_integer(int input_num)
 	{
 		abs_num = input_num;
 	}
-	/* Recursively call the func for numbers greater than 10 */
 	if (abs_num >= 10)
 	{
-		print_integer(abs_num / 10);
+		print_signed_integer(abs_num / 10);
 	}
 	digit_char = (abs_num % 10 + '0');
 	write(1, &digit_char, 1);
-
 	return (count);
 }
+
 /**
  * print_bin - prints an unsigned int in binary
  * @list: list of args
