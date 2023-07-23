@@ -1,19 +1,21 @@
-# A Customised Printf (_printf)
-## Our Firs Porject in C Programming Language
+# A Custom C - printf Version
+## Our First Project in C Programming Language
 ***
-## Table of contents
-1. [About Our Porject](#about-our-project)
+## Table of Contents
+1. [About Our Project](#about-our-project)
 2. [Showcase](#showcase)
-3. [Helpful Resources](#helpful-resources)
-4. [Project Guidelines](#project-guidelines)
-5. [Developers](#developers)
+	* [Handling Edge Cases](#handling-edge-cases)
+3. [Flowchart](#flowchart)
+4. [Helpful Resources](#helpful-resources)
+5. [Project Guidelines](#project-guidelines)
+6. [Developers](#developers)
 ***
 ## About Our Project
-##### Ever wondered what happens when you use printf() in your C program? We did too! So, we made our own mini-version of it, which we named _printf(). This function takes a format string and prints it to the console, similar to printf() but simpler and beginner-friendly!
+##### Ever wondered what happens when you use printf in your C program? We did too! So, we made our own version of it, which we named _printf. This function takes a format string and prints it to the console, similar to printf but simpler and beginner-friendly.
 ![Pic](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxtBoAQG-ycgK4yi6LJ9DH-VkRj6lsFT8rGA&usqp=CAUi)
 ***
 ## Showcase
-Here's a quick demonstration of _printf() in action:
+Here is a quick demonstration of _printf in action:
 
 ```
  _printf("Hello, there!");
@@ -32,6 +34,58 @@ _printf("My name is %s, I'm %d years old and I've given it my 100%%.", "Jose", 3
 ```
 
 * $ My name is Jose, I'm 35 years old and I've given it my 100%.
+
+### Handling Edge Cases
+Here are some special cases our `_printf` function can handle:
+
+1. **NULL format string:**  
+    ```c
+    int main(void)
+    {
+        int i = _printf(NULL);
+        printf("Returned: %d\n", i);
+        return (0);
+    }
+    ```
+2. **Incomplete format specifier:**  
+    ```c
+    int main(void)
+    {
+        int i = _printf("Incomplete format specifier, %\n");
+        printf("Returned: %d\n", i);
+        return (0);
+    }
+    ```
+
+3. **Unknown format specifier:**  
+    ```c
+    int main(void)
+    {
+        int i = _printf("Unknown format specifier, %j\n");
+        printf("Returned: %d\n", i);
+        return (0);
+    }
+    ```
+
+4. **Invalid arguments for format specifiers:**  
+    ```c
+    int main(void)
+    {
+        int i = _printf("Invalid argument: %d\n", "string");
+        printf("Returned: %d\n", i);
+        return (0);
+    }
+    ```
+
+5. **Mismatch between format specifiers and passed arguments:**  
+    ```c
+    int main(void)
+    {
+        int i = _printf("Mismatch: %d %d\n", 1988);
+        printf("Returned: %d\n", i);
+        return (0);
+    }
+    ```
 ***
 ## Flowchart
 ```mermaid
