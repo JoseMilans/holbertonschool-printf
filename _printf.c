@@ -63,6 +63,10 @@ int (*get_print_fn(const char *s))(va_list)
 		{"d", print_int},
 		{"i", print_int},
 		{"b", print_bin},
+		{"u", print_u},
+		{"o", print_o},
+		{"x", print_x},
+		{"X", print_X},
 		{NULL, NULL}
 	};
 	for (i = 0; print_types[i].p != NULL; i++) /* Thr ary of strcts till end */
