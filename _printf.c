@@ -60,8 +60,8 @@ int (*get_print_fn(const char *s))(va_list)
 	print_t print_types[] = {
 		{"c", print_char},
 		{"s", print_string},
-		{"d", print_int},
-		{"i", print_int},
+		{"d", print_signed_int},
+		{"i", print_signed_int},
 		{"b", print_bin},
 		{"u", print_u},
 		{"o", print_o},
