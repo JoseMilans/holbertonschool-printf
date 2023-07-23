@@ -26,13 +26,13 @@ int _printf(const char *format, ...)
 			int (*handler_fn)(va_list) = get_print_fn(&format[i + 1]);
 			/* Get fn ptr for format spec */
 
-			if (format[i + 1] == '%') /* %% case debuged.2-t */
+			if (format[i + 1] == '%') /* %% case debugged by 2-t */
 			{
 				write(1, &perc, 1);
 				count++, i += 2;
-			} /* Invalid arg edge case debuged.6-t */
+			} /* Invalid arg edge case debugged by 4-t */
 			else if (handler_fn == NULL && format[i + 1] != '\0')
-			{
+			{ /* Write % if non f.spec n' move nxt char */
 				write(1, &perc, 1);
 				i++, count++;
 			} /* Edge case: format str ends with single % */
