@@ -88,13 +88,7 @@ Here are some special cases our `_printf` function can handle:
     ```
 ***
 ## Flowchart
-```mermaid
-graph TD;
-    A[Start(input str)]-->B[None Conversion specifier];
-    A[Start(input str)]-->C[One or more specifier];
-    B[None Conversion specifier]-->D;
-    C[One or more specifier]-->D;
-```
+![Alt text](https://github.com/JoseMilans/holbertonschool-printf/blob/main/diagdrawio.png)
 ## Helpful Resources
 Need help? Check out our manual page for _printf!
 ```
