@@ -38,6 +38,12 @@ int print_integer(unsigned int input_num)
 	int count;
 	char digit_char;
 
+	if (input_num == 0)
+	{
+		digit_char = '0';
+		write(1, &digit_char, 1);
+		return (1);
+	}
 	count = digit_count(input_num); /* Get digit count and store it */
 	/* Recursively call the func for numbers greater than 10 */
 	if (input_num >= 10)
