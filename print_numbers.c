@@ -9,6 +9,13 @@ int print_u(va_list list)
 {
 	unsigned int num = va_arg(list, unsigned int);
 
+	if (num == 0)
+	{
+		char zero[] = "0";
+
+		write(1, &zero, 1);
+		return (1);
+	}
 	return (print_integer(num));
 }
 /**
