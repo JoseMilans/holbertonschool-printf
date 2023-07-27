@@ -25,7 +25,6 @@ int _printf(const char *format, ...)
 		{
 			int (*handler_fn)(va_list) = get_print_fn(&format[i + 1]);
 			/* Get fn ptr for format spec */
-
 			if (format[i + 1] == '%') /* %% case debugged by 2-t */
 			{
 				write(1, &perc, 1);
@@ -34,7 +33,7 @@ int _printf(const char *format, ...)
 			else if (handler_fn == NULL && format[i + 1] != '\0')
 			{ /* Write % if non f.spec n' move nxt char */
 				write(1, &perc, 1);
-				i++, count++;
+				i += 2, count++;
 			} /* Edge case: format str ends with single % */
 			else /* If no hdlr fn's found n' nxt char is null, indicate error*/
 			{
